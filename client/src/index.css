@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    /*font-optical-sizing: auto;*/
+    /*font-style: normal;*/
+    background: linear-gradient(to right,rgba(205,201,63,0.76),rgba(23, 190, 187, 0.4));
+    color: white;
+}
+
+.header {
+    /*background: linear-gradient(to right,rgba(205,201,63,0.76),rgba(23, 190, 187, 0.4));*/
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(23, 190, 187, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Небольшая тень для выделения шапки */
+}
+
+.header_pillow {
+    height: 8vh;
+}
+
+.header_logo {
+    margin: 10px;
+}
+
+.header_display_user {
+
+}
+
+.menu_logout{
+    font-size: 19px;
+    font-weight: 600;
+    margin: 10px;
+}
+
+.ul_menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+li {
+    font-size: 19px;
+    font-weight: 600;
+    margin: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.reg_log_h2 {
+    margin: 10px;
+}
+
+.main_reg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reg_form {
+    background: #3414;
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    border-radius: 20px;
+}
+
+.reg_error {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 19px;
+    background: #C70039;
+    color: #38ffc6;
+    display: flex;
+    justify-content: center;
+}
+
+.main_log {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.log_form {
+    background: #3414;
+    margin: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    border-radius: 20px;
+}
+
+form input {
+    font-family: "Nunito", sans-serif;
+    color: #4f3580;
+    margin: 10px;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.reg_but {
+    font-family: "Nunito", sans-serif;
+    margin: 20px 20px;
+    padding: 10px;
+    background-color: #fff;
+    color: #4f3580;
+    /*width: 20%;*/
+    /*min-width: 100px;*/
+    /*max-width: 15vw;*/
+    border-radius: 20px;
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.reg_but:hover {
+    /*background: rgba(23, 190, 187, 1);*/
+    transform: scale(1.1);
+}
+
+
+.main_chat_page {
+    display: flex;
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    border: 3px solid cornflowerblue;
+    height: 82vh;
+}
+
+/*.chat_h1 {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*}*/
+
+.users_and_chats {
+    /*display: flex;*/
+    /*justify-content: space-around;*/
+    border: 3px solid black;
+    min-width: 15%;
+    max-width: 20%;
+}
+
+.potential_chats {
+    border: 3px solid red;
+    /*margin: 10px;*/
+    /*width: 20%;*/
+}
+
+.potential_chat {
+    word-wrap: break-word;
+    word-break: break-all;
+    font-size: 19px;
+    font-weight: 600;
+    /*border: 3px solid green;*/
+    border-radius: 7px;
+    margin: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.potential_chat:hover {
+    background-color: rgba(23, 190, 187, 0.4);
+}
+
+.user_online {
+    color: rgba(23, 190, 187, 1);
+    font-weight: 800;
+}
+
+.user_offline {
+    display: none;
+}
+
+.user_chats {
+    border-top: 1px dashed white;
+    /*border: 3px solid red;*/
+    /*margin: 10px;*/
+    margin-top: 30px;
+    /*padding-top: 10px;*/
+}
+
+.user_chat {
+    /*word-wrap: break-word;*/
+    /*word-break: break-all;*/
+    padding: 5px;
+    font-size: 19px;
+    font-weight: 600;
+    margin: 10px;
+    /*line-height: 150%;*/
+    border-radius: 7px;
+    /*border: 3px solid orangered;*/
+    cursor: pointer;
+}
+
+.user_chat:hover {
+    background-color: rgba(23, 190, 187, 0.4);
+}
+
+.chat_box {
+    display: flex;
+    flex-direction: column;
+    border: 3px solid yellow;
+    /*border-left: 1px dashed white;*/
+    min-width: 60%;
+    max-width: 70%;
+    /*padding: 10px;*/
+}
+.chat_header{
+    display: flex;
+    justify-content: center;
+    /*border: 3px solid yellow;*/
+    font-size: 20px;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    /*border: 3px solid #df5faa;*/
+    height:80vh;
+    width: 100%;
+    max-width: 100%;
+    /*position: fixed;*/
+    overflow-y: auto;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+/* Для WebKit браузеров */
+.messages::-webkit-scrollbar {
+    display: none;
+}
+
+/* Для Firefox */
+.messages {
+    scrollbar-width: none;
+}
+
+/* Для Internet Explorer и Edge */
+.messages {
+    -ms-overflow-style: none;
+}
+
+
+.message{
+    display: flex;
+}
+
+.message_footer {
+    /*display: flex;*/
+    float: right;
+    font-size: 15px;
+    font-weight: 700;
+    background: rgba(115, 112, 112, .2);
+    border-radius: 7px;
+    padding: 2px 5px;
+}
+
+.align_self_end {
+    font-size: 18px;
+    font-weight: 600;
+    align-self: end;
+    margin: 5px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+    border-bottom: 2px dotted rgba(115,164,191, .6);
+    max-width: 50%;
+}
+
+.align_self_start{
+    align-self: start;
+    margin: 5px;
+    padding-bottom: 5px;
+    /*border-bottom: 3px dotted rgba(113,43,172, .6);*/
+    border-bottom: 2px dotted rgba(115,164,191, .6);
+    max-width: 50%;
+}
+
+.chat_bottom{
+    display: flex;
+    padding: 10px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    bottom: 0;
+    /*border: 3px solid #4f3580;*/
+    border-top: 1px dashed white;
+    left: 0;
+    height: 10vh;
+    justify-content: center;
+}
+
+.bottom_pillow {
+    /*border: 3px solid saddlebrown;*/
+    height: 10vh;
+    width: 100%;
+}
+
+.chat_input {
+    display: flex;
+    width: 50%;
+    /*border: 3px dotted #38ffc6;*/
+}
+
+.send_btn {
+    font-family: "Nunito", sans-serif;
+    color: #ffffff;
+    /*padding: 10px;*/
+    background-color: rgba(23, 190, 187, 1);
+    min-width: 150px;
+    max-width: 15vw;
+    height: 33px;
+    align-self: center;
+    /*justify-content: end;*/
+    border-radius: 20px;
+    border: none;
+    font-size: 19px;
+    font-weight: 600;
+    transition: transform 0.25s ease;
+    /*margin: 20px 20px;*/
+    /*padding: 10px;*/
+    /*background-color: #fff;*/
+    /*color: #4f3580;*/
+    /*!*width: 20%;*!*/
+    /*!*min-width: 100px;*!*/
+    /*!*max-width: 15vw;*!*/
+    /*border-radius: 20px;*/
+    /*border: none;*/
+    /*font-weight: 600;*/
+    /*font-size: 18px;*/
+
+}
+.send_btn:hover{
+    transform: scale(1.1);
+}
