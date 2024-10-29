@@ -6,9 +6,16 @@
   "name": "realtime-chat-app",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bar": "cd client && npm run build && cd .. && cd server && node index.js && cd .. && cd socket && node index.js",
+    "start": "concurrently \"npm run server\" \"npm run client\"  \"npm run socket\"",
+    "server": "cd server && npm install && node index.js",
+    "client": "cd client && npm install && npm run dev",
+    "socket": "cd socket && npm install && node index.js"
   },
   "keywords": [],
   "author": "",

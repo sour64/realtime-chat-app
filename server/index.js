@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const userRoute = require('./Routes/userRoute');
 const chatRoute = require('./Routes/chatRoute');
 const messageRoute = require('./Routes/messageRoute');
+// const path = require ('path'); // for deploy
 
 
 const app = express();
@@ -12,6 +13,10 @@ require('dotenv').config(); //загрузка переменных окруже
 
 app.use(express.json());
 app.use(cors()); //разрешение кросс-доменных запросов.
+// app.use(express.static(path.join(__dirname, 'dist'))); // for deploy
+// app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'dist', 'index.html')); // for deploy
+// });
 app.use('/api/users', userRoute); //использование маршрутов для пользователей, определенных в userRoute.
 app.use("/api/chats", chatRoute);
 app.use("/api/messages", messageRoute);
