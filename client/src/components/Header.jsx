@@ -8,7 +8,7 @@ function Header() {
     return (
         <>
             <header className="header">
-                <h2><Link to="/" className="header_logo">ChatApp</Link></h2>
+                <Link to="/" className="header_logo">ChatApp</Link>
 
                 {user && (<h2 className="header_display_user">Logged in as {user?.name}</h2>)}
                 <ul className="ul_menu">

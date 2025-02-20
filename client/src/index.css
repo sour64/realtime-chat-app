@@ -17,6 +17,7 @@ body {
 
 .header {
     /*background: linear-gradient(to right,rgba(205,201,63,0.76),rgba(23, 190, 187, 0.4));*/
+    padding: 10px;
     position: fixed;
     z-index: 1000;
     width: 100%;
@@ -25,7 +26,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: rgba(23, 190, 187, 1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Небольшая тень для выделения шапки */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Небольшая тень для выделения шапки */
 }
 
 .header_pillow {
@@ -33,29 +34,34 @@ body {
 }
 
 .header_logo {
+    font-size: 19px;
+    font-weight: 800;
     margin: 10px;
+    /*border: 3px solid cornflowerblue;*/
 }
 
 .header_display_user {
-
-}
-
-.menu_logout{
-    font-size: 19px;
-    font-weight: 600;
-    margin: 10px;
+    /*border: 3px solid deepskyblue;*/
 }
 
 .ul_menu {
     display: flex;
     flex-direction: row;
     list-style: none;
+    /*border: 3px solid cornflowerblue;*/
 }
 
-li {
+.menu_li {
     font-size: 19px;
-    font-weight: 600;
+    font-weight: 800;
     margin: 10px;
+    transition: transform 0.25s ease;
+    /*border: 3px solid lightcoral;*/
+}
+
+
+.menu_li:hover {
+    transform: scale(1.1);
 }
 
 a {
@@ -71,6 +77,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 100px;
 }
 
 .reg_form {
@@ -80,8 +87,11 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 30%;
+    max-width: 400px;
     border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .reg_error {
@@ -100,6 +110,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 100px;
 }
 
 .log_form {
@@ -109,8 +120,11 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 30%;
+    max-width: 400px;
     border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 form input {
@@ -122,6 +136,8 @@ form input {
     border-radius: 20px;
     font-size: 16px;
     font-weight: 600;
+    width: 80%;
+    /*max-width: 10vw;*/
 }
 
 .reg_but {
@@ -130,14 +146,13 @@ form input {
     padding: 10px;
     background-color: #fff;
     color: #4f3580;
-    /*width: 20%;*/
-    /*min-width: 100px;*/
-    /*max-width: 15vw;*/
+    width: 60%;
+    /*max-width: 5vw;*/
     border-radius: 20px;
     border: none;
     font-weight: 600;
     font-size: 18px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: transform 0.25s ease;
 }
 
 .reg_but:hover {
@@ -161,33 +176,92 @@ form input {
 /*}*/
 
 .users_and_chats {
-    /*display: flex;*/
-    /*justify-content: space-around;*/
+    /*background-color: rgba(23, 190, 187, 1);*/
+    /*background: #3414;*/
+    display: flex;
+    flex-direction: column;
+    align-content: center;
     border: 3px solid black;
     min-width: 15%;
     max-width: 20%;
+    /*border-right: 1px dashed white;*/
+    box-shadow:  0px 0px 4px rgba(0, 0, 0, 0.2);
+    height: 82vh;
+    z-index: 1;
+    /*position: fixed;*/
+    /*left: 0;*/
 }
 
 .potential_chats {
-    border: 3px solid red;
-    /*margin: 10px;*/
-    /*width: 20%;*/
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    /*border: 3px solid red;*/
+    /*margin-top: 20px;*/
+    padding: 10px 0;
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); !* Небольшая тень для выделения шапки *!*/
 }
 
 .potential_chat {
+    /*border: 3px solid grey;*/
+    display: flex;
+    /*justify-content: center;*/
     word-wrap: break-word;
-    word-break: break-all;
-    font-size: 19px;
-    font-weight: 600;
-    /*border: 3px solid green;*/
-    border-radius: 7px;
-    margin: 10px;
-    padding: 5px;
+    /*word-break: break-all;*/
+    font-size: 15px;
+    font-weight: 700;
+    /*border-radius: 7px;*/
+    /*border-radius: 20px;*/
+    /*margin: 5px;*/
+    padding: 5px 15px;
     cursor: pointer;
+    width: 100%;
+    /*margin-left: 20px;*/
+
 }
 
 .potential_chat:hover {
-    background-color: rgba(23, 190, 187, 0.4);
+    background-color: rgba(23, 190, 187, 0.2);
+}
+
+.user_chats {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    /*border-top: 1px dashed white;*/
+    /*border: 3px solid red;*/
+    /*margin: 5px 0;*/
+    /*padding-top: 10px;*/
+}
+
+.user_chat {
+    /*border: 3px solid green;*/
+    display: flex;
+    /*justify-content: center;*/
+    word-wrap: break-word;
+    /*word-break: break-all;*/
+    font-size: 15px;
+    font-weight: 700;
+    /*border-radius: 7px;*/
+    /*border-radius: 20px;*/
+    /*margin: 5px;*/
+    padding: 5px 15px;
+    cursor: pointer;
+    width: 100%;
+}
+.inner_user_chat{
+    /*border: 3px solid green;*/
+    /*margin-left: 15px;*/
+    /*padding: 5px;*/
+}
+h3 {
+    margin-bottom: 5px;
+}
+
+.user_chat:hover {
+    background-color: rgba(23, 190, 187, 0.2);
 }
 
 .user_online {
@@ -199,59 +273,49 @@ form input {
     display: none;
 }
 
-.user_chats {
-    border-top: 1px dashed white;
-    /*border: 3px solid red;*/
-    /*margin: 10px;*/
-    margin-top: 30px;
-    /*padding-top: 10px;*/
-}
-
-.user_chat {
-    /*word-wrap: break-word;*/
-    /*word-break: break-all;*/
-    padding: 5px;
-    font-size: 19px;
-    font-weight: 600;
-    margin: 10px;
-    /*line-height: 150%;*/
-    border-radius: 7px;
-    /*border: 3px solid orangered;*/
-    cursor: pointer;
-}
-
-.user_chat:hover {
-    background-color: rgba(23, 190, 187, 0.4);
-}
-
 .chat_box {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
     border: 3px solid yellow;
     /*border-left: 1px dashed white;*/
-    min-width: 60%;
-    max-width: 70%;
+    /*min-width: 60%;*/
+    /*max-width: 70%;*/
     /*padding: 10px;*/
+    width: 80%;
+}
+
+.choose_dialog {
+    font-size: 19px;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    position: fixed;
+    left: 40%;
+    top: 10%;
+    /*border: 3px solid darkblue;*/
 }
 .chat_header{
     display: flex;
     justify-content: center;
-    /*border: 3px solid yellow;*/
+    /*border: 3px solid hotpink;*/
     font-size: 20px;
+    margin-top: 10px;
 }
 
 .messages {
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    /*border: 3px solid #df5faa;*/
+    padding: 10px 25px;
+    border: 3px solid #df5faa;
     height:80vh;
-    width: 100%;
-    max-width: 100%;
+    /*width: 100%;*/
+    /*max-width: 100%;*/
     /*position: fixed;*/
-    overflow-y: auto;
+    /*overflow-y: auto;*/
     word-wrap: break-word;
-    word-break: break-all;
+    /*word-break: break-all;*/
+    width: 80%;
 }
 
 /* Для WebKit браузеров */
@@ -272,39 +336,44 @@ form input {
 
 .message{
     display: flex;
+    padding: 10px;
+    background: rgba(115, 112, 112, .2);
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .message_footer {
     /*display: flex;*/
     float: right;
-    font-size: 15px;
-    font-weight: 700;
-    background: rgba(115, 112, 112, .2);
+    font-size: 14px;
+    font-weight: 600;
+    /*background: rgba(115, 112, 112, .2);*/
     border-radius: 7px;
     padding: 2px 5px;
 }
 
 .align_self_end {
-    font-size: 18px;
-    font-weight: 600;
     align-self: end;
     margin: 5px;
     padding-right: 20px;
     padding-bottom: 5px;
-    border-bottom: 2px dotted rgba(115,164,191, .6);
+    /*border-bottom: 2px dotted rgba(115,164,191, .6);*/
     max-width: 50%;
 }
 
 .align_self_start{
+
     align-self: start;
     margin: 5px;
     padding-bottom: 5px;
     /*border-bottom: 3px dotted rgba(113,43,172, .6);*/
-    border-bottom: 2px dotted rgba(115,164,191, .6);
+    /*border-bottom: 2px dotted rgba(115,164,191, .6);*/
     max-width: 50%;
 }
 
 .chat_bottom{
+    background-color: rgba(23, 190, 187, 1);
     display: flex;
     padding: 10px;
     position: fixed;
@@ -312,10 +381,11 @@ form input {
     width: 100%;
     bottom: 0;
     /*border: 3px solid #4f3580;*/
-    border-top: 1px dashed white;
+    /*border-top: 1px dashed white;*/
     left: 0;
     height: 10vh;
     justify-content: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .bottom_pillow {
@@ -326,7 +396,7 @@ form input {
 
 .chat_input {
     display: flex;
-    width: 50%;
+    width: 40vw;
     /*border: 3px dotted #38ffc6;*/
 }
 
@@ -335,29 +405,28 @@ form input {
     color: #ffffff;
     /*padding: 10px;*/
     background-color: rgba(23, 190, 187, 1);
-    min-width: 150px;
+    min-width: 100px;
     max-width: 15vw;
     height: 33px;
     align-self: center;
-    /*justify-content: end;*/
     border-radius: 20px;
     border: none;
-    font-size: 19px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 800;
     transition: transform 0.25s ease;
-    /*margin: 20px 20px;*/
-    /*padding: 10px;*/
-    /*background-color: #fff;*/
-    /*color: #4f3580;*/
-    /*!*width: 20%;*!*/
-    /*!*min-width: 100px;*!*/
-    /*!*max-width: 15vw;*!*/
-    /*border-radius: 20px;*/
-    /*border: none;*/
-    /*font-weight: 600;*/
-    /*font-size: 18px;*/
-
 }
 .send_btn:hover{
     transform: scale(1.1);
+}
+
+@media screen and (max-width: 700px) {
+    .chat_box {
+        min-width: 80%;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .chat_box {
+        min-width: 55%;
+    }
 }

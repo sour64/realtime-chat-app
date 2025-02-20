@@ -12,7 +12,7 @@ const UserChat = ({chat, user}) => {
 
     return (
         <>
-            <div className="user_chat">
+            <div className={"inner_user_chat"}>
                 {recipientUser?.name}
                 <small className={isOnline? 'user_online' : 'user_offline'}> Online</small>
             </div>

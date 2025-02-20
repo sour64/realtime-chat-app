@@ -11,6 +11,7 @@ const PotentialChats = () => {
     return (
         <>
         <div className='potential_chats'>
+            <h3>users:</h3>
             {potentialChats &&
                 potentialChats.map((u,index) =>{
                     return(

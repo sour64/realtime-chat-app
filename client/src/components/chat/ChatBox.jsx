@@ -17,7 +17,7 @@ const ChatBox = () => {
     // console.log('text', textMessage);
 
     if(!recipientUser)
-        return (<p>No conversation selected yet..</p>);
+        return (<p className={'choose_dialog'}>No conversation selected yet..</p>);
 
     if(isMessagesLoading)
         return (<p>Loading chat...</p>);

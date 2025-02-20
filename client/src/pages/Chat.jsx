@@ -24,11 +24,12 @@ const Chat = () => {
                     <PotentialChats/>
                     {userChats?.length < 1 ? null : (
                         <div className='user_chats'>
+                            <h3>your chats:</h3>
                             {isUserChatsLoading && <p>Loading chats...</p>}
                                 {userChats?.map((chat, index) => {
                                     return(
-                                        <div key={index} onClick={() => updateCurrentChat(chat)}>
-                                            <UserChat chat={chat} user={user}/>
+                                        <div className={"user_chat"} key={index} onClick={() => updateCurrentChat(chat)}>
+                                            <UserChat chat={chat} user={user}  key={index} onClick={() => updateCurrentChat(chat)}/>
                                         </div> //+1?
                                     )
                                 })}
