@@ -1,4 +1,4 @@
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {ChatContext} from "../context/ChatContext.jsx";
 import UserChat from "../components/chat/UserChat";
 import {AuthContext} from "../context/AuthContext.jsx";
@@ -6,6 +6,7 @@ import PotentialChats from "../components/chat/PotentialChats";
 import ChatBox from "../components/chat/ChatBox.jsx";
 
 const Chat = () => {
+    const [selectedChat, setSelectedChat] = useState(null);
 
     const {user} = useContext(AuthContext);
 
@@ -16,6 +17,11 @@ const Chat = () => {
     } = useContext(ChatContext);
 
     console.log('userChats',userChats);
+
+    const handleChatClick = (chat) => {
+        setSelectedChat(chat);
+        updateCurrentChat(chat);
+    };
 
     return (
         <>
@@ -28,7 +34,11 @@ const Chat = () => {
                             {isUserChatsLoading && <p>Loading chats...</p>}
                                 {userChats?.map((chat, index) => {
                                     return(
-                                        <div className={"user_chat"} key={index} onClick={() => updateCurrentChat(chat)}>
+                                        <div
+                                            className={`user_chat ${selectedChat === chat ? 'selected' : ''}`}
+                                            key={index}
+                                            onClick={() => handleChatClick(chat)}
+                                        >
                                             <UserChat chat={chat} user={user}  key={index} onClick={() => updateCurrentChat(chat)}/>
                                         </div> //+1?
                                     )

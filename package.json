@@ -13,9 +13,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "bar": "cd client && npm run dev && cd .. && cd server && node index.js && cd .. && cd socket && node index.js",
     "start": "concurrently \"npm run server\" \"npm run client\"  \"npm run socket\"",
-    "server": "cd server && npm install && node index.js",
-    "client": "cd client && npm install && npm run dev",
-    "socket": "cd socket && npm install && node index.js"
+    "server": "cd server && node index.js",
+    "client": "cd client && npm run dev",
+    "socket": "cd socket && node index.js"
   },
   "keywords": [],
   "author": "",

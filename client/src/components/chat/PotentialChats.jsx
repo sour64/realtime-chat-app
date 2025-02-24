@@ -7,11 +7,11 @@ const PotentialChats = () => {
     const {user} = useContext(AuthContext)
     const {potentialChats, createChat, onlineUsers} = useContext(ChatContext);
 
-
+    // console.log('pchats', potentialChats)
     return (
         <>
         <div className='potential_chats'>
-            <h3>users:</h3>
+            <h3 className={potentialChats.length < 1 ? 'hide_users' : null}>users:</h3>
             {potentialChats &&
                 potentialChats.map((u,index) =>{
                     return(
@@ -28,6 +28,8 @@ const PotentialChats = () => {
         </div>
     </>
     );
+
 };
+
 
 export default PotentialChats;
