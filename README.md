@@ -27,7 +27,7 @@ Realtime Chat App — это приложение для обмена сообщ
    ```
     npm start
 ## Технологии
-- Frontend: React, Redux
+- Frontend: React
 - Backend: Node.js, Express
 - Realtime: Socket.io
 - Database: MongoDB
