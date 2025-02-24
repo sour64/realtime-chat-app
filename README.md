@@ -1,4 +1,8 @@
 
 
-https://github.com/user-attachments/assets/1dabef37-53e0-4fa2-abc1-a19fc80fe16c
+
+
+видео демонстрация:
+
+https://github.com/user-attachments/assets/11b0cdca-435d-4a36-8f42-bfd321b8e0b6
 
