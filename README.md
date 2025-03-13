@@ -32,6 +32,7 @@ Realtime Chat App — это приложение для обмена сообщ
 - Realtime: Socket.io
 - Database: MongoDB
 - Authentication: JWT
+- Build tool: Vite
 
 ## Функциональность
 - Создание и управление чатами
