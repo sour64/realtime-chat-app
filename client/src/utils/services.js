@@ -1,4 +1,4 @@
-export const baseUrl = "https://realtime-chat-app-1-8w8i.onrender.com/api"; // Базовый URL для API запросов
+export const baseUrl = "https://node-js-express-ijhz.onrender.com/api"; // Базовый URL для API запросов
 
 export const postRequest = async (url, body) => { // Функция для выполнения POST запросов
     const response = await fetch(url, {      // Выполнение fetch-запроса с методом POST
