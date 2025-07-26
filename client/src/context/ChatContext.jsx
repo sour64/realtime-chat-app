@@ -22,7 +22,7 @@ export const ChatContextProvider = ({children, user}) => {
 
     // initial socket
     useEffect (() => {
-        const newSocket = io ("https://realtime-chat-app-1-8w8i.onrender.com/login");
+        const newSocket = io ("https://socket-io-q9uk.onrender.com");
         setSocket(newSocket);
 
         return () => {
