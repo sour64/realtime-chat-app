@@ -1,39 +1,44 @@
-const { Server } = require("socket.io");
+const express = require('express');
+const http = require('http');
+const { Server } = require('socket.io');
+require('dotenv').config();
 
-const io = new Server({cors: "http://localhost:5173"});
+const app = express();
+const server = http.createServer(app);
+
+const io = new Server(server, {
+    cors: {
+        origin: process.env.FRONTEND_URL || "http://localhost:5173",
+        methods: ["GET", "POST"],
+    }
+});
 
 let onlineUsers = [];
 
 io.on("connection", (socket) => {
-    console.log('new connection', socket.id)
+    console.log('new connection', socket.id);
 
-    //listen to a connection
     socket.on("addNewUser", (userId) => {
-        !onlineUsers.some((user) => user.userId === userId) &&
-            onlineUsers.push({
-                userId,
-                socketId: socket.id
-            });
-
-        // console.log('onlineUsers', onlineUsers);
-
+        if (!onlineUsers.some((user) => user.userId === userId)) {
+            onlineUsers.push({ userId, socketId: socket.id });
+        }
         io.emit('getOnlineUsers', onlineUsers);
     });
 
-    // add message
     socket.on('sendMessage', (message) => {
         const user = onlineUsers.find((user) => user.userId === message.recipientId);
-
-        if(user){
+        if (user) {
             io.to(user.socketId).emit('getMessage', message);
         }
     });
 
-    socket.on("disconnect", () =>{
+    socket.on("disconnect", () => {
         onlineUsers = onlineUsers.filter((user) => user.socketId !== socket.id);
-
         io.emit('getOnlineUsers', onlineUsers);
     });
 });
 
-io.listen(3000);
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Socket.IO server running on port ${PORT}`);
+});
