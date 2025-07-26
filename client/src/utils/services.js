@@ -24,20 +24,40 @@ export const postRequest = async (url, body) => { // Функция для вы�
     return data;
 };
 
+// export const getRequest = async (url) => {
+//
+//     const response = await fetch(url);
+//
+//     const data = await response.json();
+//
+//     if(!response.ok){
+//         let message = "An error occurred..";
+//
+//         if(data?.message){
+//             message = data.message;
+//         }
+//         return {error: true, message}
+//     }
+//
+//     return data;
+// }
+
 export const getRequest = async (url) => {
-
     const response = await fetch(url);
-
-    const data = await response.json();
-
-    if(!response.ok){
-        let message = "An error occurred..";
-
-        if(data?.message){
-            message = data.message;
+    const text = await response.text(); // пробуем парсить как текст
+    try {
+        const data = JSON.parse(text); // если это JSON — всё ок
+        if(!response.ok) {
+            let message = "An error occurred..";
+            if(data?.message){
+                message = data.message;
+            }
+            return {error: true, message};
         }
-        return {error: true, message}
+        return data;
+    } catch {
+        // Если JSON парсинг не сработал, логируем полный ответ:
+        console.log("Ответ сервера НЕ JSON, а:", text);
+        return {error: true, message: 'Неожиданный формат ответа сервера', details: text};
     }
-
-    return data;
-}
+};

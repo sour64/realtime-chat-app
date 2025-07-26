@@ -20,7 +20,8 @@ export const ChatContextProvider = ({children, user}) => {
 
     console.log('onlineUsers', onlineUsers);
 
-    // initial socket
+// Инициализация подключения к Socket.IO серверу
+// Используем публичный URL сервера сокетов, задеплоенного на Render
     useEffect (() => {
         const newSocket = io ("https://socket-io-q9uk.onrender.com");
         setSocket(newSocket);
