@@ -13,9 +13,9 @@ function Header() {
                 {user && (<h2 className="header_display_user">Logged in as {user?.name}</h2>)}
                 <ul className="ul_menu">
                     {user && (<>
-                            <li className="menu_li">
-                                <Link to="/allchat" className="menu_allchat">AllChat</Link>
-                            </li>
+                            {/*<li className="menu_li">*/}
+                            {/*    <Link to="/allchat" className="menu_allchat">AllChat</Link>*/}
+                            {/*</li>*/}
                             <li className="menu_li" >
                                 <Link onClick={() => logoutUser()} to="/login" className="menu_logout">Logout</Link>
                             </li>

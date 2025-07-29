@@ -12,11 +12,13 @@ body {
     /*font-optical-sizing: auto;*/
     /*font-style: normal;*/
     background: linear-gradient(to right,rgba(205,201,63,0.76),rgba(23, 190, 187, 0.4));
+    /*background: linear-gradient(120deg, #22223b 0%, #4a4e69 100%);*/
     color: white;
+    /*color: #4f3580;*/
 }
 
 .header {
-    /*background: linear-gradient(to right,rgba(205,201,63,0.76),rgba(23, 190, 187, 0.4));*/
+    background: linear-gradient(to right,rgba(205,201,63,0.55),rgba(23, 190, 187, 0.55));
     padding: 10px;
     position: fixed;
     z-index: 1000;
@@ -25,7 +27,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(23, 190, 187, 1);
+    /*background-color: rgba(23, 190, 187, 1);*/
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Небольшая тень для выделения шапки */
 }
 
@@ -95,15 +97,16 @@ a {
 }
 
 .reg_error {
-    margin: 10px;
+    /*margin: 10px;*/
     padding: 10px;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 19px;
-    background: #C70039;
-    color: #38ffc6;
+    /*border-radius: 20px;*/
+    font-weight: 700;
+    font-size: 14px;
+    /*background: #38ffc6;*/
+    color: #C70039;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .main_log {
@@ -180,16 +183,18 @@ form input {
     display: flex;
     flex-direction: column;
     align-content: center;
+    /*justify-content: center;*/
     /*border: 3px solid black;*/
     /*min-width: 15%;*/
     /*max-width: 15%;*/
     /*width: 20vw;*/
     /*border-right: 1px dashed white;*/
     box-shadow:  0px 0px 4px rgba(0, 0, 0, 0.2);
-    height: 82vh;
+    height: 92vh;
     z-index: 1;
     /*position: fixed;*/
     /*left: 0;*/
+    color: #272991;
 }
 
 .potential_chats {
@@ -253,14 +258,15 @@ form input {
 }
 
 .user_chat.selected {
-    background-color: rgba(23, 190, 187, 0.2);
+    background-color: rgba(1, 1, 1, 0.1);
     color: white;
 }
 
 /*.inner_user_chat{*/
-/*    border: 3px solid green;*/
-/*    margin-left: 15px;*/
-/*    padding: 5px;*/
+/*    !*border: 3px solid green;*!*/
+/*    !*margin-left: 15px;*!*/
+/*    !*padding: 5px;*!*/
+/*    !*justify-content: space-between;*!*/
 /*}*/
 
 h3 {
@@ -272,7 +278,7 @@ h3 {
 }
 
 .user_online {
-    color: rgba(23, 190, 187, 1);
+    color: #c32d41;
     font-weight: 800;
 }
 
@@ -291,6 +297,7 @@ h3 {
     /*max-width: 70%;*/
     /*padding: 10px;*/
     width: 100vw;
+    height: 82vh;
 }
 
 .choose_dialog {
@@ -309,6 +316,7 @@ h3 {
     font-size: 20px;
     margin-top: 10px;
     width: 80%;
+    /*display: none;*/
 }
 
 .messages {
@@ -316,49 +324,52 @@ h3 {
     flex-direction: column;
     padding: 10px 25px;
     /*border: 3px solid #df5faa;*/
-    height:80vh;
+    height:82vh;
     /*width: 100%;*/
     /*max-width: 100%;*/
     /*position: fixed;*/
     /*overflow-y: auto;*/
-    word-wrap: break-word;
+    /*word-wrap: break-word;*/
     /*word-break: break-all;*/
-    width: 80%;
+    /*width: 80%;*/
+    flex: 1 1 auto;   /* Заполняет всё свободное пространство */
+    overflow-y: auto; /* Только сообщения прокручиваются */
 }
 
-/* Для WebKit браузеров */
+.messages {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(205,201,63,1) rgba(23, 190, 187, 1);
+}
+
 .messages::-webkit-scrollbar {
-    display: none;
+    width: 8px;
+    background: rgba(23, 190, 187, 1);
 }
-
-/* Для Firefox */
-.messages {
-    scrollbar-width: none;
+.messages::-webkit-scrollbar-thumb {
+    background: rgba(205,201,63,1);
+    border-radius: 6px;
 }
-
-/* Для Internet Explorer и Edge */
-.messages {
-    -ms-overflow-style: none;
-}
-
 
 .message{
     display: flex;
     padding: 10px;
-    background: rgba(115, 112, 112, .2);
+    /*background: rgba(115, 112, 112, 0.2);*/
+    background: rgba(102, 13, 161, 0.5);
     border-radius: 20px;
     font-size: 18px;
     font-weight: 600;
+    word-break: break-word;
 }
 
 .message_footer {
     /*display: flex;*/
     float: right;
-    font-size: 14px;
+    font-size: 11px;
     font-weight: 600;
     /*background: rgba(115, 112, 112, .2);*/
     border-radius: 7px;
     padding: 2px 5px;
+    color: black;
 }
 
 .align_self_end {
@@ -375,37 +386,46 @@ h3 {
     align-self: start;
     margin: 5px;
     padding-bottom: 5px;
-    /*border-bottom: 3px dotted rgba(113,43,172, .6);*/
-    /*border-bottom: 2px dotted rgba(115,164,191, .6);*/
     max-width: 50%;
+}
+.bottom_pillow {
+    border: 3px solid saddlebrown;
+    height: 10vh;
+    width: 100%;
+    display: none;
 }
 
 .chat_bottom{
-    background-color: rgba(23, 190, 187, 1);
-    display: flex;
-    padding: 10px;
+    /*display: flex;*/
     position: fixed;
     z-index: 1000;
     width: 100%;
     bottom: 0;
     /*border: 3px solid #4f3580;*/
-    /*border-top: 1px dashed white;*/
     left: 0;
     height: 10vh;
-    justify-content: center;
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    /*display: none;*/
+    background: linear-gradient(to right,rgba(205,201,63,0.55),rgba(23, 190, 187, 0.55)); /* можно и .8–.9 */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
-.bottom_pillow {
-    /*border: 3px solid saddlebrown;*/
-    height: 10vh;
+.chat_input_container{
+    padding: 10px;
+    display: flex;
+    /*border: solid white 1px;*/
     width: 100%;
+    /*left: 50%;*/
+    justify-content: center;
 }
 
 .chat_input {
-    display: flex;
+    /*display: flex;*/
     width: 40vw;
     /*border: 3px dotted #38ffc6;*/
+    /*width: 100%;*/
+
 }
 
 .send_btn {
@@ -434,12 +454,12 @@ h3 {
 }
 
 @media screen and (min-width: 1600px) {
-    .potential_chat {
-        font-size: 16px;
-    }
-    .user_chat {
-        font-size: 16px;
-    }
+    /*.potential_chat {*/
+    /*    font-size: 16px;*/
+    /*}*/
+    /*.user_chat {*/
+    /*    font-size: 16px;*/
+    /*}*/
     .users_and_chats {
         width: 16%;
     }
@@ -452,5 +472,136 @@ h3 {
         max-width: 55%;
         margin-left: 15%;
     }
-
 }
+
+/*body {*/
+/*    font-size: clamp(15px, 2vw, 18px); !* Шрифт будет расти на больших экранах *!*/
+/*}*/
+
+/* --- Mobile First: стили для мобильных (до 600px) --- */
+@media (max-width: 600px) {
+    .reg_form, .log_form {
+        width: 95%;
+        padding: 10px;
+        max-width: none;
+    }
+    .header_display_user {
+        font-size: .9rem;
+    }
+
+    .chat_box, .message {
+        padding: 5px 2vw;
+        font-size: 0.8rem;
+    }
+
+    .chat_input{
+        flex: 1 1 auto;
+    }
+
+    .header_logo, .menu_li {
+        font-size: .9rem;
+    }
+
+    .reg_but, .send_btn {
+        font-size: 1rem;
+        min-width: 60px;
+        width: 90%;
+        /*padding: 8px;*/
+    }
+
+    .users_and_chats {
+        position: fixed;
+        left: -100vw;   /* за пределами экрана */
+        top: 0;
+        width: 80vw;
+        max-width: 320px;
+        height: 100vh;
+        z-index: 2000;
+        transition: left 0.3s;
+        overflow-y: auto;
+        background: linear-gradient(to right,rgba(205,201,63,0.55),rgba(23, 190, 187, 0.55)); /* можно и .8–.9 */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+    .users_and_chats.open {
+        left: 0;      /* вернуть на экран */
+    }
+    .toggle_sidebar_btn {
+        /*display: block;*/
+        position: fixed;
+        bottom: 99px;
+        left: 12px;
+        z-index: 2100;
+        background: rgba(23, 190, 187, 0.85);
+        color: white;
+        border: none;
+        border-radius: 20px;
+        padding: 10px 14px;
+        font-size: 15px;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        transition: left 0.3s;
+    }
+}
+
+/*!* --- Планшеты (от 601px до 900px) --- *!*/
+/*@media (min-width: 601px) and (max-width: 900px) {*/
+/*    .main_reg, .main_log {*/
+/*        padding-top: 60px;*/
+/*    }*/
+/*    .reg_form, .log_form {*/
+/*        width: 70%;*/
+/*        max-width: 340px;*/
+/*        padding: 15px;*/
+/*    }*/
+/*    .header_logo, .menu_li {*/
+/*        font-size: 18px;*/
+/*    }*/
+/*    .reg_but, .send_btn {*/
+/*        font-size: 1.1rem;*/
+/*        width: 70%;*/
+/*        padding: 10px;*/
+/*    }*/
+/*    .users_and_chats {*/
+/*        max-width: 180px;*/
+/*    }*/
+/*}*/
+
+/*!* --- Ноутбуки и большие экраны (от 901px) --- *!*/
+/*@media (min-width: 901px) {*/
+/*    .main_reg, .main_log {*/
+/*        padding-top: 100px;*/
+/*    }*/
+/*    .reg_form, .log_form {*/
+/*        width: 30%;*/
+/*        max-width: 400px;*/
+/*        padding: 20px;*/
+/*    }*/
+/*    .header_logo, .menu_li {*/
+/*        font-size: 20px;*/
+/*    }*/
+/*    .reg_but, .send_btn {*/
+/*        font-size: 1.15rem;*/
+/*        width: 50%;*/
+/*        padding: 12px;*/
+/*    }*/
+/*    .users_and_chats {*/
+/*        max-width: 220px;*/
+/*    }*/
+/*}*/
+
+/*!* Гибкие сетки для контейнеров *!*/
+/*.main_chat_page, .users_and_chats, .messages, .chat_box {*/
+/*    flex: 1 1 0%;*/
+/*    min-width: 0;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+/*!* Пример масштабирования заголовков *!*/
+/*h1 {*/
+/*    font-size: clamp(1.5rem, 4vw, 2.5rem);*/
+/*}*/
+/*h2 {*/
+/*    font-size: clamp(1.2rem, 3vw, 2rem);*/
+/*}*/
+

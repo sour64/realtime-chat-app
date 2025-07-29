@@ -21,7 +21,6 @@ const PotentialChats = () => {
                             <small className={
                                 onlineUsers?.some((user) => user?.userId === u?._id) ?
                                 'user_online': 'user_offline'}> Online</small>
-                            {/*<hr/>*/}
                         </div>
                         );
                 })}
