@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import {useRef} from "react";
+import {useLayoutEffect,useRef} from "react";
 import {useEffect} from "react";
 import {AuthContext} from "../../context/AuthContext.jsx";
 import {ChatContext} from "../../context/ChatContext.jsx";
@@ -17,18 +17,29 @@ const ChatBox = () => {
     const {recipientUser} = useFetchRecipientUser(currentChat, user);
     const [textMessage, setTextMessage] = useState("");
     const messagesEndRef = useRef(null);
+    const inputRef = useRef(null)
 
     // console.log('text', textMessage);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (inputRef.current) inputRef.current.focus();
+        }, 100);
+        return () => clearTimeout(timer);
+    }, [currentChat]);
 
     useEffect(() => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
     }, [messages]);
 
-    if(!recipientUser)
-        return (<p className={'choose_dialog'}>No conversation selected yet..</p>);
+    if(!currentChat)
+        return (<p className={'choose_dialog'}>No conversation selected yet...</p>);
+
+    // if(!recipientUser) //неправильная проверка
+    //     return (<p className={'choose_dialog'}>No conversation selected yet...</p>);
 
     if(isMessagesLoading)
-        return (<p>Loading chat...</p>);
+        return (<p className={'loading_chat'}>Loading chat...</p>);
 
     return(
         <div className="chat_box">
@@ -52,6 +63,7 @@ const ChatBox = () => {
                 <div className={"chat_input_container"}>
                     <div className='chat_input'>
                         <InputEmoji
+                            ref={inputRef}
                             value={textMessage}
                             onChange={setTextMessage}
                             onEnter={() =>

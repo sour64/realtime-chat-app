@@ -285,6 +285,15 @@ h3 {
     display: none;
 }
 
+.loading_chat {
+    display: flex;
+    /*border: 3px solid hotpink;*/
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .chat_box {
     display: flex;
     flex-direction: column;
@@ -300,29 +309,30 @@ h3 {
 }
 
 .choose_dialog {
+    width: 100%;
     font-size: 19px;
     /*display: flex;*/
     /*justify-content: center;*/
-    position: fixed;
+    /*position: fixed;*/
     /*left: 40%;*/
     /*top: 10%;*/
     /*border: 3px solid darkblue;*/
     padding: 10px;
-    width: 100%;
-    height: 69vh;
+    /*height: 69vh;*/
     display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
 }
-.chat_header{
-    display: flex;
-    justify-content: center;
-    /*border: 3px solid hotpink;*/
-    font-size: 20px;
-    margin-top: 10px;
-    width: 80%;
-    /*display: none;*/
-}
+/*.chat_header{*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    !*border: 3px solid hotpink;*!*/
+/*    font-size: 20px;*/
+/*    margin-top: 10px;*/
+/*    width: 80%;*/
+/*    !*display: none;*!*/
+/*!*}*! хедер скрыт*/
 
 .messages {
     display: flex;
