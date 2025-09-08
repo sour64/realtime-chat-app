@@ -17,6 +17,7 @@ export const ChatContextProvider = ({children, user}) => {
     const [newMessage, setNewMessage] = useState(null);
     const [socket, setSocket] = useState(null);
     const [onlineUsers,setOnlineUsers] = useState([]);
+    const [sidebarOpen, setSidebarOpen] = useState(false);
 
     console.log('onlineUsers', onlineUsers);
 
@@ -199,6 +200,8 @@ export const ChatContextProvider = ({children, user}) => {
             messagesError,
             sendTextMessage,
             onlineUsers,
+            sidebarOpen,
+            setSidebarOpen,
         }}
     >
         {children}

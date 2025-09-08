@@ -198,6 +198,7 @@ form input {
 
 .potential_chats {
     display: flex;
+    /*flex: 1;*/
     flex-direction: column;
     align-content: center;
     align-items: center;
@@ -205,6 +206,7 @@ form input {
     /*margin-top: 20px;*/
     padding: 10px 0;
     /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); !* Небольшая тень для выделения шапки *!*/
+    overflow-y: auto;
 }
 
 .potential_chat {
@@ -231,6 +233,7 @@ form input {
 
 .user_chats {
     display: flex;
+    /*flex: 1;*/
     flex-direction: column;
     align-content: center;
     align-items: center;
@@ -238,6 +241,7 @@ form input {
     /*border: 3px solid red;*/
     /*margin: 5px 0;*/
     /*padding-top: 10px;*/
+    overflow-y: auto;
 }
 
 .user_chat {
@@ -299,7 +303,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    /*border: 3px solid yellow;*/
+    border: 3px solid yellow;
     /*border-left: 1px dashed white;*/
     /*min-width: 60%;*/
     /*max-width: 70%;*/
@@ -337,7 +341,7 @@ h3 {
 .messages {
     display: flex;
     flex-direction: column;
-    padding: 10px 25px;
+    padding: 10px 5px;
     /*border: 3px solid #df5faa;*/
     height:82vh;
     /*width: 100%;*/
@@ -346,7 +350,7 @@ h3 {
     /*overflow-y: auto;*/
     /*word-wrap: break-word;*/
     /*word-break: break-all;*/
-    /*width: 80%;*/
+    /*width: 100%;*/
     flex: 1 1 auto;   /* Заполняет всё свободное пространство */
     overflow-y: auto; /* Только сообщения прокручиваются */
 }
@@ -442,7 +446,6 @@ h3 {
     width: 40vw;
     /*border: 3px dotted #38ffc6;*/
     /*width: 100%;*/
-
 }
 
 .send_btn {
@@ -450,6 +453,7 @@ h3 {
     color: #ffffff;
     /*padding: 10px;*/
     background-color: rgba(23, 190, 187, 1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
     min-width: 100px;
     max-width: 15vw;
     height: 33px;
@@ -478,15 +482,16 @@ h3 {
     /*    font-size: 16px;*/
     /*}*/
     .users_and_chats {
-        width: 16%;
+        width: 20%;
     }
-    .chat_header {
-        max-width: 55%;
-        margin-left: 15%;
-    }
+    /*.chat_header {*/
+    /*    max-width: 55%;*/
+    /*    margin-left: 15%;*/
+    /*}*/
     .messages {
-        max-width: 55%;
-        margin-left: 15%;
+        /*max-width: 55%;*/
+        /*margin-left: 15%;*/
+        padding-right: 20%;
     }
 }
 /*body {*/
@@ -505,9 +510,14 @@ h3 {
     }
 
     .chat_box {
-        padding: 5px 2vw;
+        /*padding: 5px 2vw;*/
         font-size: 0.8rem;
     }
+
+    .messages {
+
+    }
+
     .message{
         display: flex;
         align-items: center;
@@ -527,6 +537,7 @@ h3 {
         font-size: 1rem;
         min-width: 60px;
         width: 90%;
+        font-weight: 600;
         /*padding: 8px;*/
     }
 
@@ -547,30 +558,32 @@ h3 {
     .users_and_chats.open {
         left: 0;      /* вернуть на экран */
     }
-    .toggle_sidebar_btn {
-        /*display: block;*/
-        position: fixed;
-        bottom: 99px;
-        left: 12px;
-        z-index: 2100;
-        background: rgba(23, 190, 187, 0.85);
-        color: white;
+    .show_users_sidebar_btn, .hide_users_sidebar_btn {
+        font-family: "Nunito", sans-serif;
+        display: flex;
         border: none;
         border-radius: 20px;
         padding: 10px 14px;
-        font-size: 15px;
         font-weight: 600;
         box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-        transition: left 0.3s;
+        font-size: 1rem;
+        color: #ffffff;
+        background-color: rgba(23, 190, 187, 1);
+        align-self: center;
+    }
+
+    .hide_users_sidebar_btn {
+        margin-top: auto; /* Прижимает кнопку к низу */
+        margin-bottom: 10px;
     }
 
     .chat_bottom{
-        height: 9vh;
+        height: 8vh;
     }
 }
 @media (min-width: 601px) {
     .toggle_sidebar_btn {
-        display: none;
+        /*display: none;*/
     }
 }
 /*!* --- Планшеты (от 601px до 900px) --- *!*/

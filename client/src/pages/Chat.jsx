@@ -7,9 +7,11 @@ import ChatBox from "../components/chat/ChatBox.jsx";
 
 const Chat = () => {
     const [selectedChat, setSelectedChat] = useState(null);
-    const [sidebarOpen, setSidebarOpen] = useState(false);
+
 
     const {user} = useContext(AuthContext);
+    const {sidebarOpen} = useContext(ChatContext);
+    const {setSidebarOpen} = useContext(ChatContext);
 
     const {
         userChats,
@@ -27,12 +29,6 @@ const Chat = () => {
     return (
         <>
             <main className="main_chat_page">
-                    <button
-                        className="toggle_sidebar_btn"
-                        onClick={() => setSidebarOpen((open) => !open)}
-                    >
-                        {sidebarOpen ? "close" : "show users"}
-                    </button>
                 <div className={`users_and_chats${sidebarOpen ? " open" : ""}`}>
                     <PotentialChats/>
                     {userChats?.length < 1 ? null : (
@@ -52,6 +48,12 @@ const Chat = () => {
                                 })}
                         </div>
                     )}
+                    <button
+                        className="hide_users_sidebar_btn"
+                        onClick={() => setSidebarOpen((open) => !open)}
+                    >
+                        hide users
+                    </button>
                 </div>
                 <ChatBox/>
             </main>

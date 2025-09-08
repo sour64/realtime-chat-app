@@ -9,7 +9,6 @@ import moment from 'moment';
 import InputEmoji from 'react-input-emoji';
 
 
-
 const ChatBox = () => {
 
     const {user} = useContext(AuthContext);
@@ -17,7 +16,10 @@ const ChatBox = () => {
     const {recipientUser} = useFetchRecipientUser(currentChat, user);
     const [textMessage, setTextMessage] = useState("");
     const messagesEndRef = useRef(null);
-    const inputRef = useRef(null)
+    const inputRef = useRef(null);
+
+    const {sidebarOpen} = useContext(ChatContext);
+    const {setSidebarOpen} = useContext(ChatContext);
 
     // console.log('text', textMessage);
 
@@ -61,6 +63,12 @@ const ChatBox = () => {
             </div>
             <div className='chat_bottom'>
                 <div className={"chat_input_container"}>
+                    <button
+                        className="show_users_sidebar_btn"
+                        onClick={() => setSidebarOpen((open) => !open)}
+                    >
+                        show users
+                    </button>
                     <div className='chat_input'>
                         <InputEmoji
                             ref={inputRef}
