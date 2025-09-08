@@ -303,7 +303,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    border: 3px solid yellow;
+    /*border: 3px solid yellow;*/
     /*border-left: 1px dashed white;*/
     /*min-width: 60%;*/
     /*max-width: 70%;*/
