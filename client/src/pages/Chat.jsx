@@ -29,6 +29,7 @@ const Chat = () => {
     return (
         <>
             <main className="main_chat_page">
+
                 <div className={`users_and_chats${sidebarOpen ? " open" : ""}`}>
                     <PotentialChats/>
                     {userChats?.length < 1 ? null : (

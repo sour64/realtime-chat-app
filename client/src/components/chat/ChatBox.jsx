@@ -35,7 +35,14 @@ const ChatBox = () => {
     }, [messages]);
 
     if(!currentChat)
-        return (<p className={'choose_dialog'}>No conversation selected yet...</p>);
+        return (<div className={'choose_dialog'}>
+            <button
+                className="show_users_sidebar_btn"
+                onClick={() => setSidebarOpen((open) => !open)}
+            >
+                No conversation selected yet...<br/>show users
+            </button>
+        </div>);
 
     // if(!recipientUser) //неправильная проверка
     //     return (<p className={'choose_dialog'}>No conversation selected yet...</p>);
